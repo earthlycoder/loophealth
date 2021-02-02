@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+   <body>
+     <h1>Products List !!</h1>         
+      <table border = 1>
+         <thead>
+           <td>Id</td>
+           <td>Name</td>
+           <td>Gender</td>
+           <td>Image</td>
+           <td>MRP</td>
+           <td>Price</td>
+           <td>Sizes</td>
+           <td>Category</td>
+           <td>Rating</td>
+         </thead>
+
+         {% for row in rows %}
+            <tr>
+               <td>{{row["productId"]}}</td>
+               <td>{{row["productName"]}}</td>
+               <td>{{row["gender"]}}</td>
+               <td><a href="{{ row["searchImage"] }}" target="_blank"><button>View Image</button></a></td>
+               <td>{{row["mrp"]}}</td>
+               <td>{{row["price"]}}</td>
+               <td>{{row["sizes"]}}</td>
+               <td>{{row["category"]}}</td>
+               <td>{{row["rating"]}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+      <br>
+      <br>
+      <br>
+
+
+      <a href = "/">Go back to home page</a>
+   </body>
+</html>

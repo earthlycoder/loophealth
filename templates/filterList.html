@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+   <body>
+     <h1>Filter List !!</h1>
+     <br>
+     <form action="{{ url_for('filterProducts')}}" method = "post">
+       <label>Url:</label><input type="text" name="url" placeholder="URL" required="required"/><br>
+            <label for="filters">Choose a filter:</label>
+            <select id="filters" name="filters">
+              <option value="gender">Gender</option>
+              <option value="sizes">Size</option>
+              <option value="category">Category</option>
+              <option value="all">All</option>
+            </select><br>
+            <label> Keyword</label><input type="text" name="keyword"/><br><br>
+            <button type="submit" class="btn btn-primary btn-block btn-large">Filter</button>
+     </form>
+
+     <br>
+     <br>
+     <table border = 1>
+        <thead>
+          <td>Id</td>
+          <td>Name</td>
+          <td>Gender</td>
+          <td>Image</td>
+          <td>MRP</td>
+          <td>Price</td>
+          <td>Sizes</td>
+          <td>Category</td>
+          <td>Rating</td>
+        </thead>
+
+        {% for row in rows %}
+           <tr>
+              <td>{{row["productId"]}}</td>
+              <td>{{row["productName"]}}</td>
+              <td>{{row["gender"]}}</td>
+              <td><a href="{{ row["searchImage"] }}" target="_blank"><button>View Image</button></a></td>
+              <td>{{row["mrp"]}}</td>
+              <td>{{row["price"]}}</td>
+              <td>{{row["sizes"]}}</td>
+              <td>{{row["category"]}}</td>
+              <td>{{row["rating"]}}</td>
+           </tr>
+        {% endfor %}
+     </table>
+     <br>
+      <a href = "/">Go back to home page</a>
+   </body>
+</html>

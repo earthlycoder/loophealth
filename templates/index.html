@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>e-Commerce</title>
+
+</head>
+
+<body>
+	<h1>API List !!</h1>
+  <form action="{{ url_for('getProducts')}}"method="post">
+      <input type="text" name="url" placeholder="URL" required="required" />
+      <button type="submit" class="btn btn-primary btn-block btn-large">Get All Products</button>
+  </form>
+  <br>
+  <form action="{{ url_for('getFilters')}}"method="post">
+    <input type="text" name="url" placeholder="URL" required="required" />
+      <button type="submit" class="btn btn-primary btn-block btn-large">Get All Filters</button>
+  </form>
+  <br>
+  <form action="{{ url_for('filterPage')}}"method="get">
+      <button type="submit" class="btn btn-primary btn-block btn-large">Filter Products</button>
+  </form>
+  <br>
+  <form action="{{ url_for('searchPage')}}"method="get">
+      <button type="submit" class="btn btn-primary btn-block btn-large">Search Products</button>
+  </form>
+
+</body>
+</html>

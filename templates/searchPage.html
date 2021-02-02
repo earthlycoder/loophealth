@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>e-Commerce</title>
+
+</head>
+
+<body>
+	<h1>Whats the name of the product like?</h1>
+  <form action="{{ url_for('searchProducts')}}"method="post">
+      <input type="text" name="url" placeholder="URL" required="required" />
+      <input type="text" name="keyword" placeholder="Product" required="required" />
+      <button type="submit" class="btn btn-primary btn-block btn-large">Get Search Results</button>
+  </form>
+
+</body>
+</html>
