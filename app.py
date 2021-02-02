@@ -79,10 +79,10 @@ def filterProducts():
             print(filterList)
             filterString = '|'.join(filterList)
             print(filterString)
-            df1= df[df['filters'].str.contains(filterString, case = False)]
-            d= df1.to_dict('records')
+            df= df[df['filters'].str.contains(filterString, case = False)]
+            df= df.to_dict('records')
 
-        return render_template("filterList.html",rows = d)
+        return render_template("filterList.html",rows = df)
 
 @app.route('/searchPage',methods=['GET','POST'])
 def searchPage():
